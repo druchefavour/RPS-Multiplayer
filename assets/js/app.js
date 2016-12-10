@@ -110,6 +110,41 @@ function playGame(thisPlyNum, thisPlyName) {
     $("#position").css("display", "block");
     $("#player-names").html("<ul id='list-of-players'"+
           "style='list-style-type:circle'></ul>");
+
+    //----------------------------------------------------
+    // Enter and store data in firebase (1) first player info (2) All player info (3) All the scores 
+
+    var plyDatRef = new database().ref().child(loc_plys_dat).child(thisPlyNum);
+    var allPlyDatRef = new database().ref().child(loc_plys_dat);
+    var plyScrRef = new database().ref().child(loc_plys_scr);
+
+
+    //----------------------------------------------------------
+
+    // Set the second player number to the opposite of thisvplayer number.
+    
+    var scdPlyNum = thisPlyNum === 0 ? 1 : 0;
+
+    // Check if the the player name is new. If it is, add and set their win/loss record to 0, 0. If it's not new, do nothing and use the stored win/loss record.
+
+    plyScrRef.on('value', function(snapshot) {
+      if (snapshot.val() === null) {
+        plyScrRef.child(thisPlyName).set([0, 0]);
+      } else if (!(thisPlyName in snapshot.val())) {
+        plyScrRef.child(thisPlyName).set([0, 0]);
+      }
+    });
+    //------------------------------------------------------------
+
+    //Clear data when player disconnects (use removeOnDisconnect() syntax)
+    plyDtRef.removeOnDisconnect();
+
+    //------------------------------------------------------------
+    // STATIC CASE
+    // Set player data to first players username and get ready for the game to start. This is before any selection is made.
+
+    plyDatRef.set({plyName: thisPlyName, state: 'start', game: 'none'});
+
   }
 }
 
