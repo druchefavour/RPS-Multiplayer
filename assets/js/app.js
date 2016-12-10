@@ -17,7 +17,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-//Initial Variables
+//1. Initial Variables
 //============================
 //Create a  variable to indicate the maximum number of players.
 //-------------------------------------------------
@@ -33,5 +33,25 @@ var loc_plys_dat = "players_info";
 //Create variables to store scores
 var loc_plys_scr = "player_scores";
 // ================================================
+
+// 2. Create function to return persistent username. This will be used to assign the same player data if they refresh
+//-----------------------------------------
+function getPlyName () {
+  return prompt ("plyName?", "fstPly");
+}
+//------------------------------------------
+
+//=============================================
+// 3. Call a function which takes a player number, user name and player choice when the player presses any of Rock, Paper and Scissors
+
+function startGame(thisPlyNum, thisPlyName, thisGame) {
+  // Create firebase  ref for the input player
+  var plyDatRef = new database().ref().child(loc_plys_dat).child(thisPlyName);
+
+  // set data in the database to reflect player's choice
+
+  plyDatRef.set({plyName:thisPlyName, state: 'thisChoice', game: thisGame});
+}
+
 
 });
