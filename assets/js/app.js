@@ -93,6 +93,24 @@ function winLogic(fstPlyGame, scdPlyGame) {
   }
 } 
 // ==========================================================
+//5. Write scripts to start game and repeat game. Use playGame()
 
+//-----------------------------------------------------------
+// Disallow additional player when max. number of players take seats
+function playGame(thisPlyNum, thisPlyName) {
+  if (thisPlyNum === null) {
+    alert('All seat taken. Try again later:-(');
+  }
+
+  // Allow new player to join game if there is a spot and reset HTML
+  else {
+    $("#position").empty();
+    $("#score-board").empty();
+    $("#list-of-players").empty();
+    $("#position").css("display", "block");
+    $("#player-names").html("<ul id='list-of-players'"+
+          "style='list-style-type:circle'></ul>");
+  }
+}
 
 });
