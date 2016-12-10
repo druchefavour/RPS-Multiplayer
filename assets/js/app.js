@@ -53,5 +53,46 @@ function startGame(thisPlyNum, thisPlyName, thisGame) {
   plyDatRef.set({plyName:thisPlyName, state: 'thisChoice', game: thisGame});
 }
 
+//=================================================================
+//4. Use switch statement to set the RPS Game: Ref: http://www.w3schools.com/js/js_switch.asp
+
+//----------------------------------------------------------------
+
+//winLogic() is called after both players have made their selections. It takes your choice and your opponent's choice as arguments.
+function winLogic(fstPlyGame, scdPlyGame) {
+  switch (fstPlyGame) {
+    case 'rock':
+    switch(scdPlyGame) {
+      case 'rock':
+      return 'ties';
+      case 'paper':
+      return 'losses';
+      case 'scissors':
+      return 'wins';
+    }
+    break;
+    case 'paper':
+    switch(scdPlyGame) {
+      case 'rock':
+      return 'wins';
+      case 'paper':
+      return 'ties';
+      case 'scissors':
+      return 'losses';
+    }
+    break;
+    case 'scissors':
+    switch(scdPlyGame) {
+      case 'rock':
+      return 'losses';
+      case 'paper':
+      return 'wins';
+      case 'scissors':
+      return 'ties';
+    }
+  }
+} 
+// ==========================================================
+
 
 });
