@@ -20,4 +20,14 @@
  	padding: 5px;
  	margin: 5px;
  }
+
+ .this-player-score {
+        padding: 5px;
+        margin-left: -5px;
+        font-weight: bold;
+    }
+.this-player-score {
+        background-color: rgba(255, 225, 0, 0.8);
+    }
+
   
