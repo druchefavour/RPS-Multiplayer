@@ -1,58 +1,14 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <meta charset="utf-8">
-	<title>Rock Paper Scissors</title>
-	<link rel="stylesheet" type="text/css" href="RPS-Multiplayer/assets/css/style.css">
-	<!-- JQuery -->
-	<!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-    
-</head>
-<body>
-<!-- Place the Html into a div-->
-  <div class="container-fluid">
-    <div class="row">
-      <h1 class="jumbotron">Click Either R, P or S to start playing!</h1>
-    </div>
-    <div class="left">
-      <div id="status"></div>
-        <div id="players">
-          <ul id="players-list" style="list-style-type:none"></ul>
-        </div>
-    </div>
-    
-       
-    <div class="right">
-      <ul id="scoreboard"></ul>
-    </div>
-              
-  </div>
-
-  <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <!-- Firebase Reference -->
-    <script src="http://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-
-
-    <!--    ==========================      - -->
-
-    <script type="text/javascript">
 // ==================================================================================================//
 // **************************************************************************************************//
 
 // 1.  INITIALIZE FIREBASE
 
-  	var config = {
-  		apiKey: "AIzaSyACMOyBf9gDjAvAciDS8dcybIC9rf_bd_c",
-  		authDomain: "rps-project-c99fb.firebaseapp.com",
-  		databaseURL: "https://rps-project-c99fb.firebaseio.com",
-  		storageBucket: "rps-project-c99fb.appspot.com",
-  		messagingSenderId: "954884480615"
+    var config = {
+      apiKey: "AIzaSyACMOyBf9gDjAvAciDS8dcybIC9rf_bd_c",
+      authDomain: "rps-project-c99fb.firebaseapp.com",
+      databaseURL: "https://rps-project-c99fb.firebaseio.com",
+      storageBucket: "rps-project-c99fb.appspot.com",
+      messagingSenderId: "954884480615"
   };
   firebase.initializeApp(config);
 
@@ -415,7 +371,3 @@ function assignPlayerNumberAndPlayGame() {
 }
 assignPlayerNumberAndPlayGame()
 
-
-</script>
-</body>
-</html>

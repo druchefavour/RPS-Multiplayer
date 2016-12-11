@@ -31,3 +31,33 @@
     }
 
   
+body {
+        width: 800px;
+        background-color: #fff;
+        padding: 30px;
+    }
+    .left {
+        float: left;
+        width: 40%;
+    }
+    .right {
+        float: left;
+        margin-left: 5%;
+        width: 40%;
+    }
+    ul#players-list li, ul#scoreboard li {
+        list-style-type:none;
+        text-align: left;
+    }
+    ul#scoreboard {
+        padding: 0;
+        margin: 0;
+    }
+    .your-score {
+        padding: 5px;
+        margin-left: -5px;
+        font-weight: bold;
+    }
+    .your-score {
+        background-color: rgba(255, 225, 0, 0.8);
+    }
